@@ -5,6 +5,7 @@ import fileUpload from "express-fileupload";
 import cors from "cors";
 import { dbConnections } from "./database/db.js";
 import userRouter from "./routes/user.routes.js"
+import messageRoute from "./routes/message.routes.js"
 
 
 const app=express();
@@ -27,6 +28,7 @@ app.use(fileUpload({
 }));
 
 app.use("/api/v1/user",userRouter );
+app.use("/api/v1/message",messageRoute);
 
 
 dbConnections();
